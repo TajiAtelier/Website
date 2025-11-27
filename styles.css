@@ -1,0 +1,448 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reset + Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  background-color: #fdfaf6;
+  color: #333;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-family: 'Cormorant Garamond', serif;
+  color: #8b5e3c;
+}
+
+.centered {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.brand-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #8b5e3c;
+  margin: 0;
+}
+
+/* Navigation */
+.nav-right ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-right a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #c8a165; /* golden brass hover */
+}
+
+/* Active state for header navigation */
+.nav-right a.active {
+  color: #c8a165; /* golden brass */
+  border-bottom: 2px solid #c8a165; /* subtle underline accent */
+}
+
+.whatsapp-order {
+  color: #25D366;
+  font-weight: 600;
+}
+
+.whatsapp-order i {
+  margin-right: 6px;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem;
+  background-color: #fdfaf6;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.hero-text {
+  flex: 1;
+  padding: 2rem;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: #c8a165;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #a67c52; /* deeper brass on hover */
+}
+
+/* Product Grid */
+.product-grid {
+  padding: 2rem;
+}
+
+.product-grid h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 1rem;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: #c8a165;
+  border-radius: 3px;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  width: 200px;
+  text-align: center;
+  opacity: 0; /* start hidden for animation */
+  animation: fadeInUp 1s ease forwards;
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 6px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(200, 161, 101, 0.4); /* subtle brass glow */
+}
+
+.product-card p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1.5rem 2rem;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.footer-left,
+.footer-right {
+  flex: 1 1 100%;
+  margin: 0.5rem 0;
+}
+
+.footer-right a {
+  margin: 0 0.5rem;
+  font-size: 1.2rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-right a:hover {
+  color: #c8a165; /* golden brass hover */
+}
+
+/* Credit line */
+.credit {
+  font-size: 0.7rem;
+  color: #999;
+  margin-top: 0.3rem;
+}
+
+/* Scroll-down arrow (below hero) */
+.scroll-down {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.scroll-down a {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.scroll-down a:hover {
+  color: #c8a165; /* brass hover */
+}
+
+/* Scroll-up arrow (hidden until scroll) */
+.scroll-up {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.scroll-up.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-up:hover {
+  background-color: #333;
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to hero text */
+.hero-text {
+  opacity: 0;
+  animation: fadeInUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Stagger product card animations */
+.product-card:nth-child(1) { animation-delay: 0.4s; }
+.product-card:nth-child(2) { animation-delay: 0.6s; }
+.product-card:nth-child(3) { animation-delay: 0.8s; }
+.product-card:nth-child(4) { animation-delay: 1s; }
+
+/* Category Navigation (Collections Page) */
+.category-nav {
+  position: sticky;
+  top: 70px; /* sits just below the header */
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  z-index: 999; /* ensure it stays above product cards */
+  padding: 0.5rem 2rem;
+}
+
+.category-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.category-nav a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  padding-bottom: 0.2rem;
+}
+
+.category-nav a:hover {
+  color: #c8a165; /* brass hover */
+  border-bottom: 2px solid #c8a165; /* underline accent */
+}
+
+.category-nav a.active {
+  color: #c8a165;
+  border-bottom: 2px solid #c8a165;
+}
+
+/* Reviews Section */
+
+
+
+/* Contact Form Section */
+.contact-form iframe {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* Contact Details Section */
+.contact-details {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.contact-details h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #8b5e3c;
+}
+
+.contact-details p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-details a {
+  color: #c8a165;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}
+
+.contact-cta {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  text-align: left;
+}
+
+.contact-cta p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.contact-cta a {
+  color: #c8a165;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-cta a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .nav-right ul {
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    display: none;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+  }
+
+  #menu-toggle:checked + .hamburger + .nav-right ul {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hero {
+    flex-direction: column;
+  }
+
+  .footer-left,
+  .footer-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  
+
+  .category-nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
