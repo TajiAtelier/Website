@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taji Atelier | Curated & Customized Brass Jewelry</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Favicon -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+  <link rel="manifest" href="./site.webmanifest">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="192x192" href="./android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="./android-chrome-512x512.png"> -->
+
+</head>
+
+<body id="top">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="brand-name">Taji Atelier</h1>
+    </div>
+
+    <!-- Hamburger for mobile -->
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <!-- Right Navigation -->
+    <nav class="nav-right" role="navigation">
+      <ul>
+        <li><a href="index.html" class="active">home</a></li>
+        <li><a href="collections.html">collections</a></li>
+        <li><a href="contact.html">contact</a></li>
+        <li><a href="https://wa.me/254720502825" target="_blank" class="whatsapp-order">
+          <i class="fab fa-whatsapp"></i> order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-image">
+      <img src="placeholder.jpg" alt="Jewelry showcase" />
+    </div>
+    <div class="hero-text">
+      <h2>Curated & Customized Brass Jewelry</h2>
+      <a href="collections.html" class="cta-button">explore now</a>
+    </div>
+  </section>
+
+  <!-- Scroll-down arrow (centered below hero) -->
+  <div class="scroll-down">
+    <a href="#products" title="See our products">
+      <i class="fas fa-arrow-down"></i>
+    </a>
+  </div>
+
+  <!-- Product Grid -->
+  <section id="products" class="product-grid">
+    <h3>our selected pieces</h3>
+    <div class="scroll-container">
+      <div class="product-card"><img src="placeholder.jpg" alt="Product 1" /><p>Brass Ring</p></div>
+      <div class="product-card"><img src="placeholder.jpg" alt="Product 2" /><p>Statement Earrings</p></div>
+      <div class="product-card"><img src="placeholder.jpg" alt="Product 3" /><p>Layered Necklace</p></div>
+      <div class="product-card"><img src="placeholder.jpg" alt="Product 4" /><p>Minimal Cuff</p></div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews" class="reviews">
+    <h2 class="centered">what our customers say</h2>
+    <div id="review-list" style="max-width: 800px; margin: 1.5rem auto;"></div>
+    <!-- Review submission form -->
+    <iframe 
+      src="https://docs.google.com/forms/d/e/1FAIpQLSdPmu2-xGuOPFnfetfa_AShUxPjTVfN5BYcCAc9uzdRD-j7eQ/viewform?embedded=true"
+      width="100%" 
+      height="700" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0"
+      style="max-width:800px; margin:1.5rem auto; display:block; border:none; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+      Loading…
+    </iframe>
+  </section>
+
+  <!-- Scroll-up arrow (bottom right) -->
+  <a href="#top" class="scroll-up" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <p>&copy; 2025 Taji Atelier. All rights reserved.</p>
+      <p class="credit">Made by Wilfrida Were</p>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.tiktok.com/@taji.atelier" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/Taji_Atelier" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/254720502825" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('scroll', () => {
+      const scrollUp = document.querySelector('.scroll-up');
+      if (!scrollUp) return;
+      if (window.scrollY > 200) {
+        scrollUp.classList.add('show');
+      } else {
+        scrollUp.classList.remove('show');
+      }
+    });
+  </script>
+
+  <script>
+    fetch("https://script.google.com/macros/s/AKfycbw2pN9z2m1sENxLFHfT8n7WLjrBm8gQth8_QSk2cdldN3oZw_RBpgJrEoOpCckLkJ4F/exec")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("review-list");
+        if (!data.length) {
+          container.innerHTML = "<p>No reviews yet.</p>";
+          return;
+        }
+  
+        data.forEach(review => {
+          const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
+          const card = document.createElement("div");
+          card.style = "border-left: 4px solid #c8a165; padding: 1rem; margin-bottom: 1rem; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-radius: 8px;";
+  
+          card.innerHTML = `
+            <div style="color:#c8a165; font-size:1rem; letter-spacing:2px; margin-bottom:0.5rem;">${stars}</div>
+            <div style="font-size:0.95rem; line-height:1.5;">${review.message}</div>
+            <div style="font-size:0.8rem; color:#777; margin-top:0.6rem;">Reviewed on ${review.timestamp}</div>
+          `;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        document.getElementById("review-list").innerHTML = "<p>Unable to load reviews.</p>";
+        console.error("Review fetch error:", error);
+      });
+  </script>
+
+</body>
+</html>
