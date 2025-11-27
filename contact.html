@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taji Atelier | Contact</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body id="top">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">
+      <h1 class="brand-name">Taji Atelier</h1>
+    </div>
+
+    <input type="checkbox" id="menu-toggle" />
+    <label for="menu-toggle" class="hamburger" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </label>
+
+    <nav class="nav-right" role="navigation">
+      <ul>
+        <li><a href="index.html">home</a></li>
+        <li><a href="collections.html">collections</a></li>
+        <li><a href="contact.html" class="active">contact</a></li>
+        <li><a href="https://wa.me/254720502825" target="_blank" class="whatsapp-order">
+          <i class="fab fa-whatsapp"></i> order now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-text centered">
+      <h2>Contacts</h2>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="contact-form" style="text-align: center;">
+    <div style="display: inline-block; max-width: 640px; width: 100%;">
+      <iframe 
+        src="https://docs.google.com/forms/d/e/1FAIpQLSc9qZPlBzD-fFGiGZ-loEqyDvLhyxVRjWHmFl4DwJwsyxIgZg/viewform?embedded=true" 
+        width="100%" 
+        height="640" 
+        frameborder="0" 
+        marginheight="0" 
+        marginwidth="0" 
+        style="border: none;">
+        Loading…
+      </iframe>
+    </div>
+  </section>
+
+
+  <!-- Contact CTA -->
+  <section class="contact-cta">
+    <p>
+      Want to share your experience? 
+      <a href="index.html#reviews">Leave a review</a>
+    </p>
+  </section>
+
+  <!-- Contact Details -->
+  <section class="contact-details">
+    <h3>other ways to reach us</h3>
+    <p><i class="fab fa-whatsapp"></i> WhatsApp: <a href="https://wa.me/254720502825" target="_blank">+254 720 502 825</a></p>
+    <p><i class="fas fa-envelope"></i> Email: <a href="mailto:tajiatelier@gmail.com">tajiatelier@gmail.com</a></p>
+    <p>
+      <a href="https://www.instagram.com/Taji_Atelier" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
+      <a href="https://www.tiktok.com/@taji.atelier" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+    </p>
+  </section>
+
+  <!-- Scroll-up arrow -->
+  <a href="#top" class="scroll-up" title="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">
+      <p>&copy; 2025 Taji Atelier. All rights reserved.</p>
+      <p class="credit">Made by Wilfrida Were</p>
+    </div>
+    <div class="footer-right">
+      <a href="https://www.tiktok.com/@taji.atelier" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/Taji_Atelier" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/254720502825" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <!-- Scroll-up script -->
+  <script>
+    document.addEventListener('scroll', () => {
+      const scrollUp = document.querySelector('.scroll-up');
+      if (!scrollUp) return;
+      if (window.scrollY > 200) {
+        scrollUp.classList.add('show');
+      } else {
+        scrollUp.classList.remove('show');
+      }
+    });
+  </script>
+</body>
+</html>
