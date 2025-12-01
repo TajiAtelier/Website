@@ -123,35 +123,6 @@
     });
   </script>
 
-  <!-- <script>
-    fetch("https://script.google.com/macros/s/AKfycbzEXgDtFx9ONPN8ji3HEInYVcdpwnIuhV5kYmlaa-jG4AghIYNe3mfkdRD7XRpnIviNqQ/exec")      
-      .then(response => response.json())
-      .then(data => {
-        const container = document.getElementById("review-list");
-        if (!data.length) {
-          container.innerHTML = "<p>No reviews yet.</p>";
-          return;
-        }
-  
-        data.forEach(review => {
-          const stars = "★".repeat(review.rating) + "☆".repeat(5 - review.rating);
-          const card = document.createElement("div");
-          card.style = "border-left: 4px solid #c8a165; padding: 1rem; margin-bottom: 1rem; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-radius: 8px;";
-  
-          card.innerHTML = `
-            <div style="color:#c8a165; font-size:1rem; letter-spacing:2px; margin-bottom:0.5rem;">${stars}</div>
-            <div style="font-size:0.95rem; line-height:1.5;">${review.message}</div>
-            <div style="font-size:0.8rem; color:#777; margin-top:0.6rem;">Reviewed on ${review.timestamp}</div>
-          `;
-          container.appendChild(card);
-        });
-      })
-      .catch(error => {
-        document.getElementById("review-list").innerHTML = "<p>Unable to load reviews.</p>";
-        console.error("Review fetch error:", error);
-      });
-  </script> -->
-
   <!-- Shows reviews from the google review form -->
   <script>
     function loadReviews() {
