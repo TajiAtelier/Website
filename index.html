@@ -125,8 +125,8 @@
 
   <!-- Shows reviews from the google review form -->
   <script>
-    function loadReviews() {
-      fetch("https://script.google.com/macros/s/AKfycbzEXgDtFx9ONPN8ji3HEInYVcdpwnIuhV5kYmlaa-jG4AghIYNe3mfkdRD7XRpnIviNqQ/exec")      
+  function loadReviews() {
+      fetch("https://script.google.com/macros/s/AKfycbyqjvDzSstgngFAWipk_-MJe5siR_Oidc2JNx8lVDuDGOa0zSu5F2YkTY3aUSqoE5fZGA/exec") 
         .then(response => response.json())
         .then(data => {
           const container = document.getElementById("review-list");
@@ -143,7 +143,7 @@
             card.innerHTML = `
               <div style="color:#c8a165; font-size:1rem; letter-spacing:2px; margin-bottom:0.5rem;">${stars}</div>
               <div style="font-size:0.95rem; line-height:1.5;">${review.message}</div>
-              <div style="font-size:0.8rem; color:#777; margin-top:0.6rem;">Reviewed on ${review.timestamp}</div>
+              <div style="font-size:0.8rem; color:#777; margin-top:0.6rem;">Reviewed by ${review.name} on ${review.timestamp}</div>
             `;
             container.appendChild(card);
           });
@@ -160,7 +160,6 @@
     // Refresh reviews every 10 seconds
     setInterval(loadReviews, 10000);
   </script>
-
 
 </body>
 </html>
